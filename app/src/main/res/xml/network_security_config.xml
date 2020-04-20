@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<network-security-config>
+<base-config cleartextTrafficPermitted="true" />
+<domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="true">http://www.groupkt.com</domain>
+</domain-config>
+</network-security-config>
+
+
+<!--NOTE-->
+
+<!--    When an app communicates with servers using a cleartext network traffic, such as HTTP, it could raise a risk of eavesdropping and tampering of content. -->
+<!--    Third parties can inject unauthorized data or leak information about the users. That is why developers are encouraged to a secure traffic only, such as HTTPS.-->
+<!--    But just in case using cleartext is inevitable, developers can fix the error by-->
+<!--    Editing useCleartextTraffic attribute in manifest file, or-->
+<!--    Adding Network Security Config-->
+<!--    Android 6.0 introduced the useCleartextTraffic attribute under application element in android manifest. The default value in Android P is “false”.
+        Setting this to true indicates that the app intends to use clear network traffic.-->
+<!--android:usesCleartextTraffic="true"-->
+<!--However, this may appear to fix the problem but it opens a threat to data integrity. A better solution is offered in Android 7.0 through network security configuration file.-->
+<!--Network security configuration allows an app to permit cleartext traffic from a certain domain.-->
